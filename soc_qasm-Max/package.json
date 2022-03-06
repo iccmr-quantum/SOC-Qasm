@@ -1,0 +1,20 @@
+{
+  "name": "soc_qasm-max",
+  "version": "1.0.0",
+  "description": "",
+  "main": "soc_qasm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Qasm",
+    "Websockets",
+    "QAC",
+    "Quantum Computing"
+  ],
+  "author": "Omar Costa Hamido",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io-client": "^4.4.1"
+  }
+}
