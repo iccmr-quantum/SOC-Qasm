@@ -1,7 +1,5 @@
 # SOC-Qasm
-A spinoff of [OSC-Qasm](https://github.com/iccmr-quantum/OSC-Qasm/). A simple Websockets Python interface for executing Qasm code.
-
-## NOTE: THIS REPO IS STILL A WORK IN PROGRESS. PLEASE WAIT FOR AN OFFICIAL RELEASE BEFORE ATTEMPTING TO USE THIS PROJECT.
+A spinoff of [OSC-Qasm](https://github.com/iccmr-quantum/OSC-Qasm/). A simple Socket.io Python interface for executing Qasm code.
 
 ## Installation
 Before starting, make sure you have [Python](https://www.python.org/) 3.7+ in your system.
@@ -29,26 +27,25 @@ Update pip and setuptools
 - Note: if for some reason you don't have pip, please [install it](https://phoenixnap.com/kb/install-pip-windows)
 
 Install qiskit and python-osc
-- `pip install qiskit python-osc`
+- `pip install qiskit socketio eventlet`
 
-Copy the [osc_qasm-Max](./soc_qasm-Max/) folder to your Max library
+Copy the [soc_qasm-Max](./soc_qasm-Max/) folder to your Max library
 - usually located in Documents/Max 8/Library
 
 ## Running
 
 First, open a Terminal (Mac) or Command Prompt (Windows) and start you python environment.
 
-Then run the python module: `python osc_qasm.py`
+Then run the python module: `python soc_qasm.py`
 Wait until the program outputs the following lines:
 ```console
 ================================================
- OSC_QASM by OCH & Itaborala @ QuTune (v1.x.x)
+ SOC_QASM by OCH @ QuTune (v1.x)
  https://iccmr-quantum.github.io               
 ================================================
-Server Receiving on 127.0.0.1 port PPPP
-Server Sending back on x.x.x.x port QQQQ
+(xxxxx) wsgi starting up on http://0.0.0.0:PPPP
 ```
-Now you can open the [example.maxpat](example.maxpat) or [osc_qasm.maxhelp](soc_qasm-Max/soc_qasm.maxhelp) in Max 8 and start sending messages with QuantumCircuits in Qasm, to the OSC-Qasm python module.
+Now you can open the [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) in Max 8 and start sending messages with QuantumCircuits in Qasm, to the OSC-Qasm python module. Note: the first time you open [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) you might need to install the nodejs dependencies by clicking the `script npm install` message box on the right side. Use the `start/stop client` toggle on the left side to enable the node.script object before sending any qasm code.
 
 When you're done working with osc_qasm.py you can leave the virtual environment with
 - on mac & windows: `deactivate`
@@ -59,15 +56,11 @@ You can also set some additional arguments and flags in front of `python soc_qas
 ```console
 usage: osc_qasm.py [-h] [--token TOKEN] [--hub HUB] [--group GROUP]
                    [--project PROJECT]
-                   [receive_port] [send_port] [ip]
+                   [port]
 
 positional arguments:
-  receive_port       The port where the soc_qasm.py Server will listen for
-                     incoming messages. Default port is 1416
-  send_port          The port that osc_qasm.py will use to send messages back
-                     to Max. Default port is 1417
-  ip                 The IP address where the client (Max/MSP) is located.
-                     Default IP is 127.0.0.1 (localhost)
+  port       The port where the soc_qasm.py Server will listen for
+                     incoming messages. Default port is 5000
 
 optional arguments:
   -h, --help         show this help message and exit
@@ -82,7 +75,7 @@ optional arguments:
                      need to provide your IBMQ Project
 ```
 
-The `soc_qasm.maxpat` abstraction also allows customization using several attributes and positional arguments. Make sure to check out the help patch and the reference page!
+The [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) patch also allows some customization using some positional arguments. Make sure to check out the `p More-options` subpatch to learn more!
 
 <!-- ![soc_qasm-help](./soc_qasm-help.png) -->
 
@@ -97,4 +90,4 @@ Also, please consider learning more about Max [here](https://cycling74.com/get-s
 ## Acknowledgements
 SOC-Qasm is a spinoff of [OSC-Qasm](https://github.com/iccmr-quantum/OSC-Qasm/) which is inspired by Jack Woehr's [Qisjob project](https://zenodo.org/record/4554481), and the och.qisjob [object](https://www.quantumland.art/phd).
 
-This repo was created by Omar Costa Hamido and Paulo Itaboraí as part of the [QuTune Project](https://iccmr-quantum.github.io/).
+This repo was created by Omar Costa Hamido as part of the [QuTune Project](https://iccmr-quantum.github.io/).
