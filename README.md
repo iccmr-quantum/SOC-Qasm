@@ -45,7 +45,9 @@ Wait until the program outputs the following lines:
 ================================================
 (xxxxx) wsgi starting up on http://0.0.0.0:PPPP
 ```
-Now you can open the [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) in Max 8 and start sending messages with QuantumCircuits in Qasm, to the OSC-Qasm python module. Note: the first time you open [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) you might need to install the nodejs dependencies by clicking the `script npm install` message box on the right side. Use the `start/stop client` toggle on the left side to enable the node.script object before sending any qasm code.
+Now you can open the [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) in Max 8 and start sending messages with QuantumCircuits in Qasm, to the SOC-Qasm python module. Note: the first time you open [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) you might need to install the nodejs dependencies by clicking the `script npm install` message box on the right side. Use the `start/stop client` toggle on the left side to enable the node.script object before sending any qasm code.
+
+You can also experiment interacting with your soc_qasm.py server using a web browser. Open [this page](https://quantumland-art.github.io/SOC-Qasm/) for an example.
 
 When you're done working with osc_qasm.py you can leave the virtual environment with
 - on mac & windows: `deactivate`
