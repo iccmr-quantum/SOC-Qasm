@@ -12,8 +12,9 @@
     "QAC",
     "Quantum Computing"
   ],
-  "author": "Omar Costa Hamido",
-  "license": "ISC",
+  "homepage": "https://github.com/iccmr-quantum/SOC-Qasm",
+  "author": "Omar Costa Hamido (https://omarcostahamido.com)",
+  "license": "MIT",
   "dependencies": {
     "socket.io-client": "^4.4.1"
   }

@@ -1,4 +1,6 @@
 # SOC-Qasm
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6342383.svg)](https://doi.org/10.5281/zenodo.6342383)
+
 A spinoff of [OSC-Qasm](https://github.com/iccmr-quantum/OSC-Qasm/). A simple Socket.io Python interface for executing Qasm code.
 
 ## Installation
@@ -14,13 +16,13 @@ Open the Terminal (Mac) or Command Prompt (Windows) and navigate to the folder  
 
 Create a python virtual environment
 - on the terminal, type: `python3 -m venv SOCQasm`
-- depending on your system, you may simply use: `python -m venv OSCQasm`
+- depending on your system, you may simply use: `python -m venv SOCQasm`
 
 Enter your new python virtual environment
 - on mac: `source SOCQasm/bin/activate`
 - on windows: `SOCQasm\Scripts\activate`
 
-At the start of your terminal prompt, it should show `(OSCQasm)`, indicating that you're in your new virtual environment.
+At the start of your terminal prompt, it should show `(SOCQasm)`, indicating that you're in your new virtual environment.
 
 Update pip and setuptools
 - `pip install --upgrade pip setuptools`
@@ -28,9 +30,6 @@ Update pip and setuptools
 
 Install qiskit and python-osc
 - `pip install qiskit socketio eventlet`
-
-Copy the [soc_qasm-Max](./soc_qasm-Max/) folder to your Max library
-- usually located in Documents/Max 8/Library
 
 ## Running
 
@@ -47,16 +46,16 @@ Wait until the program outputs the following lines:
 ```
 Now you can open the [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) in Max 8 and start sending messages with QuantumCircuits in Qasm, to the SOC-Qasm python module. Note: the first time you open [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) you might need to install the nodejs dependencies by clicking the `script npm install` message box on the right side. Use the `start/stop client` toggle on the left side to enable the node.script object before sending any qasm code.
 
-You can also experiment interacting with your soc_qasm.py server using a web browser. Open [this page](https://quantumland-art.github.io/SOC-Qasm/) for an example.
+You can also experiment interacting with your soc_qasm.py instance using a web browser. Open [this page](https://quantumland-art.github.io/SOC-Qasm/) for an example. You will notice that, independently of where this page is being hosted, it can still connect with your local soc_qasm.py. The source code for this page can be found in [docs/index.html](docs/index.html).
 
-When you're done working with osc_qasm.py you can leave the virtual environment with
+When you're done working with soc_qasm.py you can leave the virtual environment with
 - on mac & windows: `deactivate`
 
 ### Additional arguments
 You can also set some additional arguments and flags in front of `python soc_qasm.py`:
 
 ```console
-usage: osc_qasm.py [-h] [--token TOKEN] [--hub HUB] [--group GROUP]
+usage: soc_qasm.py [-h] [--token TOKEN] [--hub HUB] [--group GROUP]
                    [--project PROJECT]
                    [port]
 
@@ -77,7 +76,7 @@ optional arguments:
                      need to provide your IBMQ Project
 ```
 
-The [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) patch also allows some customization using some positional arguments. Make sure to check out the `p More-options` subpatch to learn more!
+The [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) patch also allows some customization using positional arguments. Make sure to check out the `p More-options` subpatch to learn more!
 
 <!-- ![soc_qasm-help](./soc_qasm-help.png) -->
 

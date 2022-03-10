@@ -1,3 +1,5 @@
+// SOC-Qasm by OCH @ QuTune (2022)
+
 const path = require('path');
 const Max = require('max-api');
 const { io } = require("socket.io-client");
@@ -8,7 +10,6 @@ var port; // destination port of the socket.io server (soc_qasm.py)
 // This will be printed directly to the Max console
 Max.post('SOC-Qasm');
 Max.post('OCH 2022');
-// Max.post('SOC-Qasm [v1.0] is starting...');
 
 if (process.argv[2]) {
 	dest = process.argv[2];
@@ -61,7 +62,6 @@ socket.on("disconnect", () => {
   console.log(socket.id); // undefined
 });
 socket.on("response", (data) => {
-  // if (data[0]=="counts") {Max.post("counts: "+data[1]);}
   Max.outlet(data);
   console.log(socket.id); // undefined
 });
