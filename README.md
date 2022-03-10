@@ -1,4 +1,6 @@
 # SOC-Qasm
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6342383.svg)](https://doi.org/10.5281/zenodo.6342383)
+
 A spinoff of [OSC-Qasm](https://github.com/iccmr-quantum/OSC-Qasm/). A simple Socket.io Python interface for executing Qasm code.
 
 ## Installation
