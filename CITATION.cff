@@ -5,7 +5,7 @@ authors:
   given-names: "Omar Costa"
   orcid: "https://orcid.org/0000-0001-5077-853X"
 title: "SOC-Qasm"
-version: 1.0.0
+version: 1.0.1
 doi: 10.5281/zenodo.6342383
 date-released: 2022-03-09
 url: "https://github.com/Quantumland-art/SOC-Qasm"
