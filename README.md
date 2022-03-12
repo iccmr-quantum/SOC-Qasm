@@ -3,6 +3,8 @@
 
 A spinoff of [OSC-Qasm](https://github.com/iccmr-quantum/OSC-Qasm/). A simple Socket.io Python interface for executing Qasm code.
 
+Control your soc_qasm.py module directly from the [web browser](https://quantumland-art.github.io/SOC-Qasm/).
+
 ## Installation
 Before starting, make sure you have [Python](https://www.python.org/) 3.7+ in your system.
 - when using the installer on windows make sure to select the option `Add Python X to PATH`
@@ -78,6 +80,9 @@ optional arguments:
 
 The [soc_qasm.maxpat](soc_qasm-Max/soc_qasm.maxpat) patch also allows some customization using positional arguments. Make sure to check out the `p More-options` subpatch to learn more!
 
+### Note
+
+In order to access your soc_qasm.py instance from outside your local area network, you might need to either open the corresponding ports on your router (port forwarding), or use a vpn service like hamachi.
 <!-- ![soc_qasm-help](./soc_qasm-help.png) -->
 
 
