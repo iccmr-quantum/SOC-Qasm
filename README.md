@@ -31,7 +31,7 @@ Update pip and setuptools
 - Note: if for some reason you don't have pip, please [install it](https://phoenixnap.com/kb/install-pip-windows)
 
 Install qiskit and python-osc
-- `pip install qiskit socketio eventlet`
+- `pip install qiskit python-socketio eventlet`
 
 ## Running
 
