@@ -1,6 +1,6 @@
 {
   "name": "soc_qasm-max",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "soc_qasm.js",
   "scripts": {
