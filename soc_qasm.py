@@ -8,7 +8,7 @@
 
 from qiskit import *
 from qiskit.test.mock import *
-from qiskit.tools import job_monitor
+# from qiskit.tools import job_monitor
 import argparse
 import sys
 import socketio
@@ -17,7 +17,7 @@ import eventlet
 sio = socketio.Server(async_mode='eventlet',cors_allowed_origins='*')
 app = socketio.WSGIApp(sio)
 
-class FileLikeOutputSOC(object):
+class FileLikeOutputSOC(object): # not in use until we can figure out why all sio.emit messages triggered inside an @sio.event are sent at the end
     ''' This class emulates a File-Like object
         with a "write()" method that can be used
         by print() and qiskit.tools.job_monitor()
@@ -64,9 +64,9 @@ class FileLikeErrorSOC(object):
 def run_circuit(qc, shots, backend_name):
     print("SID3: ",SID)
     print("Running circuit on {}...".format(backend_name))
-    sio.emit('response', ['info', "Running circuit on {}...".format(backend_name)], room=SID)
+    # sio.emit('response', ['info', "Running circuit on {}...".format(backend_name)], room=SID)
 
-    flsoc = FileLikeOutputSOC() # Use this only for job_monitor output
+    # flsoc = FileLikeOutputSOC() # Use this only for job_monitor output
 
     if backend_name != 'qasm_simulator':
         if backend_name in ('FakeAlmaden', 'FakeArmonk', 'FakeAthens', 'FakeBelem', 'FakeBoeblingen', 'FakeBogota', 'FakeBrooklyn', 'FakeBurlington', 'FakeCambridge', 'FakeCambridgeAlternativeBasis', 'FakeCasablanca', 'FakeEssex', 'FakeGuadalupe', 'FakeJakarta', 'FakeJohannesburg', 'FakeLagos', 'FakeLima', 'FakeLondon', 'FakeManhattan', 'FakeManila', 'FakeMelbourne', 'FakeMontreal', 'FakeMumbai', 'FakeOurense', 'FakeParis', 'FakePoughkeepsie', 'FakeQuito', 'FakeRochester', 'FakeRome', 'FakeRueschlikon', 'FakeSantiago', 'FakeSingapore', 'FakeSydney', 'FakeTenerife', 'FakeTokyo', 'FakeToronto', 'FakeValencia', 'FakeVigo', 'FakeYorktown'):
@@ -88,7 +88,7 @@ def run_circuit(qc, shots, backend_name):
                 sys.exit()
             backend = provider.get_backend(backend_name)
             job = execute(qc, shots=shots, backend=backend)
-            job_monitor(job, output=flsoc, line_discipline="") # 'flsoc' (FileLikeOutputSOC) reroutes the output from stdout to the SOC client
+            # job_monitor(job, output=flsoc, line_discipline="") # 'flsoc' (FileLikeOutputSOC) reroutes the output from stdout to the SOC client
     else:
         backend = Aer.get_backend('qasm_simulator')
         job = execute(qc, shots=shots, backend=backend)
@@ -117,7 +117,7 @@ def parse_qasm(*args):
 
     counts = run_circuit(qc, shots, backend_name)
     print("Sending result counts back to Max")
-    sio.emit('response', ['info', 'Retrieving results from soc_qasm.py...'], room=SID)
+    # sio.emit('response', ['info', 'Retrieving results from soc_qasm.py...'], room=SID)
     # list comprehension that converts a Dict into an
     # interleaved string list: [key1, value1, key2, value2...]
     sorted_counts = {}
