@@ -2,7 +2,7 @@
 # A simple Socket.io Python interface for executing Qasm code.
 # Or a simple bridge to connect _The QAC Toolkit_ with real quantum hardware.
 #
-# Omar Costa Hamido [v1.0] (2022-03-10)
+# Omar Costa Hamido [v1.0] (2022)
 # https://github.com/iccmr-quantum/SOC-Qasm
 #
 
