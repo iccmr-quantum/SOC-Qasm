@@ -14,7 +14,7 @@ import sys
 import socketio
 import eventlet
 
-sio = socketio.Server(async_mode='eventlet',cors_allowed_origins='*')
+sio = socketio.Server(async_mode='eventlet',cors_allowed_origins='*', ping_timeout=1200)
 app = socketio.WSGIApp(sio)
 
 class FileLikeOutputSOC(object): # not in use until we can figure out why all sio.emit messages triggered inside an @sio.event are sent at the end
